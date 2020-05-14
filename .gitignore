@@ -1,0 +1,24 @@
+### Java ###
+# Binary 
+bin/*
+
+# Log file
+*.log
+
+
+# Package Files #
+
+### Linux ###
+*~
+
+### VisualStudioCode ###
+*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Eclipse ###
+.settings/
+/bin/
