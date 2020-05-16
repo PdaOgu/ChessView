@@ -17,7 +17,8 @@ public class Bishop extends PieceImpl implements Piece {
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
 				
-		if (!this.equals(p) || (isTaken != null && !isTaken.equals(t)))
+		if (!this.equals(p)
+				|| (isTaken != null && (!isTaken.equals(t) || p.isWhite() == t.isWhite())))
 			return false;
 				
 		return board.clearDiaganolExcept(oldPosition, newPosition, p, t);

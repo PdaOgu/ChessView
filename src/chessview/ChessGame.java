@@ -110,9 +110,9 @@ public class ChessGame {
 				break;
 			case 'O':
 				if(str.equals("O-O")) {
-					return new Castling(isWhite,true);
+					return new Castling(isWhite, true);
 				} else if(str.equals("O-O-O")) {
-					return new Castling(isWhite,false);
+					return new Castling(isWhite, false);
 				} else {
 					throw new IllegalArgumentException("invalid sheet");
 				}

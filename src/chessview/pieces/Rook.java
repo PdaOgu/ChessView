@@ -19,7 +19,8 @@ public class Rook extends PieceImpl implements Piece {
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
 				
-		if (!this.equals(p) || (isTaken != null && !isTaken.equals(t)))
+		if (!this.equals(p)
+				|| (isTaken != null && (!isTaken.equals(t) || p.isWhite() == isTaken.isWhite())))
 			return false;
 		
 		boolean isValid = board.clearColumnExcept(oldPosition, newPosition, p, t)

@@ -146,7 +146,7 @@ public class Board {
 				Piece p = pieceAt(pos);
 				// If this is an opposition piece, and it can take my king,
 				// then we're definitely in check.
-				if (p != null && p.isWhite() != isWhite
+				if (p != null  && p.isWhite() != isWhite
 						&& p.isValidMove(pos, kingPos, king, this)) {
 					// p can take opposition king, so we're in check.						
 					return true;
@@ -175,10 +175,10 @@ public class Board {
 		int endCol = endPosition.column();
 		int startRow = startPosition.row();
 		int endRow = endPosition.row();		
-		int diffCol = Math.max(startCol,endCol) - Math.min(startCol,endCol);
-		int diffRow = Math.max(startRow,endRow) - Math.min(startRow,endRow);		
+		int diffCol = Math.abs(startCol - endCol);
+		int diffRow = Math.abs(startRow - endRow);		
 		
-		if(diffCol != diffRow && diffCol == 0) {			
+		if(diffCol != diffRow || diffCol == 0) {			
 			return false;
 		}
 		
@@ -219,6 +219,15 @@ public class Board {
 		
 		if(diffCol != 0 || diffRow == 0) {
 			return false;
+		}
+		
+		int row = minRow;		
+		while(row <= maxRow) {			
+			Piece p = pieces[row][minCol];			
+			if(p != null && !contains(p,exceptions)) {			
+				return false;
+			}					
+			row++; 
 		}
 		
 		return true;

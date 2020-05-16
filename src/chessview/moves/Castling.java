@@ -5,8 +5,10 @@ import chessview.pieces.*;
 
 public class Castling implements MultiPieceMove {	
 	private boolean kingSide;
+	private boolean isWhite;
 	
-	public Castling(boolean isWhite, boolean kingSide) {		
+	public Castling(boolean isWhite, boolean kingSide) {
+		this.isWhite = isWhite;
 		this.kingSide = kingSide;
 	}
 	
@@ -15,11 +17,20 @@ public class Castling implements MultiPieceMove {
 	}
 	
 	public void apply(Board board) {	
-		// hmmm
+		Position kingPos = new Position(this.isWhite ? 1 : 8, 5);
+		Position newKingPos = new Position(this.isWhite ? 1 : 8, this.kingSide ? 7 : 3);
+		Position rookPos = new Position(this.isWhite ? 1 : 8, this.kingSide ? 8 : 1);
+		Position newRookPos = new Position(this.isWhite ? 1 : 8, this.kingSide ? 6 : 4);
+		board.move(kingPos, newKingPos);
+		board.move(rookPos, newRookPos);
 	}
 	
 	public boolean isValid(Board board) {
-		return true;		
+		Position kingPos = new Position(this.isWhite ? 1 : 8, 5);
+		Position newKingPos = new Position(this.isWhite ? 1 : 8, this.kingSide ? 7 : 3);
+		King king = (King) board.pieceAt(kingPos);
+		
+		return king.isValidMove(kingPos, newKingPos, null, board);
 	}		
 	
 	public String toString() {

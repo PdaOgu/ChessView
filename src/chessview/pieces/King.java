@@ -23,7 +23,8 @@ public class King extends PieceImpl implements Piece {
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
 				
-		if (!this.equals(p) || (isTaken != null && !isTaken.equals(t)))
+		if (!this.equals(p)
+				|| (isTaken != null && (!isTaken.equals(t) || p.isWhite() == isTaken.isWhite())))
 			return false;
 
 		boolean isValid = false;
@@ -43,13 +44,16 @@ public class King extends PieceImpl implements Piece {
 							&& board.clearRowExcept(oldPosition, rookPos, p, rook)) {
 						int increment = newCol == 3 ? -1 : +1;
 						Board tmpBoard = new Board(board);
+						Piece tmpPiece = tmpBoard.pieceAt(oldPosition);
 						for (int i = oldCol; i != newCol + increment; i += increment) {
 							Position tryPos = new Position(oldRow, i);
-							tmpBoard.move(oldPosition, tryPos);
+							tmpBoard.setPieceAt(oldPosition, null);
+							tmpBoard.setPieceAt(tryPos, tmpPiece);
 							if (tmpBoard.isInCheck(this.isWhite)) {
 								return false;
 							}
-							tmpBoard.move(tryPos, oldPosition);
+							tmpBoard.setPieceAt(oldPosition, tmpPiece);
+							tmpBoard.setPieceAt(tryPos, null);
 						}
 						isValid = true;
 					}
