@@ -18,23 +18,26 @@ public class Pawn extends PieceImpl implements Piece {
 		int oldCol = oldPosition.column();
 		int newRow = newPosition.row();
 		int newCol = newPosition.column();
+		
+		if ((oldRow < 1 && oldRow > 8) || (oldCol < 1 && oldCol > 8)
+				|| (newRow < 1 && newRow > 8) || (newCol < 1 && newCol > 8))
+			return false;
 
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
+				
+		if (!this.equals(p))
+			return false;
+		
 		
 		boolean isValid = false;
-		
-		if (!this.equals(p)
-			|| (newRow < 1 && newRow > 8)
-			|| (newCol < 1 && newCol > 8))
-			return false;
 		
 		if (isTaken == null) {				// simple move, not take any piece
 			if (oldCol == newCol) {		
 				if (oldRow + dir == newRow) {	// move forward 1 square
 					isValid = true;
 					this.canEnPassant = false;
-				} else if (oldRow + dir + dir == newRow && this.isFirstMove) {	// move forward 2 square
+				} else if (oldRow + dir + dir == newRow && this.isFirstMove) {	// move forward 2 squares
 					isValid = true;
 					this.canEnPassant = true;
 				}
