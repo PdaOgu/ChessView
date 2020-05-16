@@ -9,12 +9,19 @@ public class Rook extends PieceImpl implements Piece {
 	
 	public boolean isValidMove(Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
+		
+		if (!Position.isValid(oldPosition)
+				|| !Position.isValid(newPosition))
+			return false;
+
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
+				
+		if (!this.equals(p) || (isTaken != null && !isTaken.equals(t)))
+			return false;
 		
-		return this.equals(p)
-				&& (t == isTaken || (isTaken != null && isTaken.equals(t)))
-				&& (board.clearColumnExcept(oldPosition, newPosition, p, t));
+		return board.clearColumnExcept(oldPosition, newPosition, p, t)
+				|| board.clearRowExcept(oldPosition, newPosition, p, t);
 	}
 	
 	public String toString() {
