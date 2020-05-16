@@ -46,7 +46,7 @@ public class Pawn extends PieceImpl implements Piece {
 			if (oldRow + dir == newRow && Math.abs(newCol - oldCol) == 1) {		// pawn take by move diagonally 1 square
 				if (isTaken.equals(t)) {										// simple take of pawn
 					isValid = true;
-				} else {														// can be special case en passant
+				} else {														// check valid en passant
 					Piece adjacent = board.pieceAt(new Position(oldRow, newCol));	// for checking position of isTaken
 					if ((isTaken instanceof Pawn) && isTaken.equals(adjacent)) {
 						if (((Pawn) isTaken).canEnPassant

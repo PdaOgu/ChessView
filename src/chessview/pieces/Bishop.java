@@ -20,11 +20,6 @@ public class Bishop extends PieceImpl implements Piece {
 		if (!this.equals(p) || (isTaken != null && !isTaken.equals(t)))
 			return false;
 				
-		/* Remark:
-		 * clearDiaganolExcept() will return false if oldPostion and newPostion
-		 * are not on a diagonal line, it means that the clearDiaganolExcept()
-		 * will also check the validity of Bishop's path for us. 
-		 */
 		return board.clearDiaganolExcept(oldPosition, newPosition, p, t);
 		
 //		return this.equals(p)
