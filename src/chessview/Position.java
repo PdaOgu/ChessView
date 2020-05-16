@@ -1,5 +1,7 @@
 package chessview;
 
+import chessview.pieces.Piece;
+
 public final class Position {
 	private int row; // must be between 1 and 8
 	private int col; // must be between 1 and 8
@@ -31,5 +33,9 @@ public final class Position {
 	
 	public String toString() {		
 		return ((char)('a'+(col-1))) + Integer.toString(row);		
+	}
+	
+	public static boolean isValid (Position p) {
+		return (1 <= p.row() && p.row() <= 8) && (1 <= p.column() && p.column() <= 8);
 	}
 }

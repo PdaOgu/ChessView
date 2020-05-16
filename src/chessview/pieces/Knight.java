@@ -14,10 +14,10 @@ public class Knight extends PieceImpl implements Piece {
 		int newRow = newPosition.row();
 		int newCol = newPosition.column();
 		
-		if ((oldRow < 1 && oldRow > 8) || (oldCol < 1 && oldCol > 8)
-				|| (newRow < 1 && newRow > 8) || (newCol < 1 && newCol > 8))
+		if (!Position.isValid(oldPosition)
+				|| !Position.isValid(newPosition))
 			return false;
-
+		
 		Piece p = board.pieceAt(oldPosition);
 		Piece t = board.pieceAt(newPosition);
 				
