@@ -29,11 +29,7 @@ public class Bishop extends PieceImpl implements Piece {
 		 * are not on a diagonal line, it means that the clearDiaganolExcept()
 		 * will also check the validity of Bishop's path for us. 
 		 */
-		if (board.clearDiaganolExcept(oldPosition, newPosition, p, t)) {
-			return true;
-		}
-		
-		return false;
+		return board.clearDiaganolExcept(oldPosition, newPosition, p, t);
 		
 //		return this.equals(p)
 //				&& (t == isTaken || (isTaken != null && isTaken.equals(t)))
