@@ -9,13 +9,9 @@ public class Bishop extends PieceImpl implements Piece {
 	
 	public boolean isValidMove(Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
-		int oldRow = oldPosition.row();
-		int oldCol = oldPosition.column();
-		int newRow = newPosition.row();
-		int newCol = newPosition.column();
-		
-		if ((oldRow < 1 && oldRow > 8) || (oldCol < 1 && oldCol > 8)
-				|| (newRow < 1 && newRow > 8) || (newCol < 1 && newCol > 8))
+
+		if (!Position.isValid(oldPosition)
+				|| !Position.isValid(newPosition))
 			return false;
 
 		Piece p = board.pieceAt(oldPosition);
