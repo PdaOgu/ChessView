@@ -4,27 +4,33 @@ import chessview.*;
 import chessview.pieces.*;
 
 /**
- * This represents an "en passant move" --- http://en.wikipedia.org/wiki/En_passant.
+ * @author hung
  * 
- * @author djp
  * 
  */
-public class EnPassant implements Move {
-	public EnPassant(SinglePieceMove move) {				
+public class EnPassant extends TakeMove {
+	
+	public EnPassant (Move move) {
+		super(move);
+	}
+
+	public boolean isValid(Board board) {
+		int newRow = newPosition.row();
+		int newCol = newPosition.column();
+		int dir = this.isWhite() ? 1 : -1;
+		this.isTaken = board.pieceAt(new Position(newRow - dir, newCol));
+		return this.piece.isValidMove(oldPosition, newPosition, isTaken, board);
 	}
 	
-	public boolean isWhite() {
-		return false;
-	}
-	
-	public boolean isValid(Board board) {		
-		return true;
-	}
-	
-	public void apply(Board board) {		
+	public void apply(Board board) {
+		board.move(oldPosition, newPosition);
+		int newRow = newPosition.row();
+		int newCol = newPosition.column();
+		int dir = this.isWhite() ? 1 : -1;
+		board.setPieceAt(new Position(newRow - dir, newCol), null);
 	}
 	
 	public String toString() {
-		return "ep";
+		return super.toString() + "ep" + this.toStringCheckmate();
 	}
 }

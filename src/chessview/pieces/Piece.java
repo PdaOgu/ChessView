@@ -1,17 +1,23 @@
 package chessview.pieces;
 
-import java.util.Arrays;
-
 import chessview.*;
 
 
-public interface Piece {
+public abstract class Piece {
+	private boolean isWhite;
+	
+	public Piece (boolean isWhite) {		
+		this.isWhite = isWhite;
+	}
+
 	/**
 	 * Determine whether this piece is white or black.
 	 * @return
 	 */
-	public boolean isWhite();
-
+	public boolean isWhite () {
+		return this.isWhite;
+	}
+	
 	/**
 	 * Check whether or not a given move on a given board is valid. For takes,
 	 * the piece being taken must be supplied.
@@ -26,6 +32,18 @@ public interface Piece {
 	 *            --- board on which the validity of this move is being checked.
 	 * @return
 	 */
-	public boolean isValidMove(Position oldPosition,
-			Position newPosition, Piece isTaken, Board board);	
+	public abstract boolean isValidMove (Position oldPosition, 
+	                                    Position newPosition,
+	                                    Piece isTaken,
+	                                    Board board);
+	
+	public abstract String toString ();
+	
+	public boolean equals (Object o) {
+		if (o instanceof Piece) {
+			Piece p = (Piece) o;
+			return o.getClass() == this.getClass() && this.isWhite == p.isWhite();
+		}
+		return false;
+	}		
 }

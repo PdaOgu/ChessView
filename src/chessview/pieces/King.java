@@ -2,14 +2,14 @@ package chessview.pieces;
 
 import chessview.*;
 
-public class King extends PieceImpl implements Piece {
+public class King extends Piece {
 	boolean isFirstMove;
-	public King(boolean isWhite) {
+	public King (boolean isWhite) {
 		super(isWhite);
 		this.isFirstMove = true;
 	}	
 	
-	public boolean isValidMove(Position oldPosition, Position newPosition,
+	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 		int oldRow = oldPosition.row();
 		int oldCol = oldPosition.column();
@@ -24,8 +24,11 @@ public class King extends PieceImpl implements Piece {
 		Piece t = board.pieceAt(newPosition);
 				
 		if (!this.equals(p)
-				|| (isTaken != null && (!isTaken.equals(t) || p.isWhite() == isTaken.isWhite())))
-			return false;
+                || (t == null && isTaken != null)            
+                || (t != null && isTaken == null)              
+                || (t != null && !t.equals(isTaken))            
+                || (t != null && t.isWhite() == this.isWhite()))
+            return false;
 
 		boolean isValid = false;
 		int diffCol = Math.abs(oldCol - newCol);
@@ -35,7 +38,7 @@ public class King extends PieceImpl implements Piece {
 		} else {
 			// check valid castling move
 			if (oldRow == newRow
-					&& ((oldRow == 1 && this.isWhite) || (oldRow == 8 && !this.isWhite))) {
+					&& ((oldRow == 1 && this.isWhite()) || (oldRow == 8 && !this.isWhite()))) {
 				if (newCol == 3 || newCol == 7) {
 					Position rookPos = new Position(oldRow, newCol == 3 ? 1 : 8);
 					Piece rook = board.pieceAt(rookPos);
@@ -49,7 +52,7 @@ public class King extends PieceImpl implements Piece {
 							Position tryPos = new Position(oldRow, i);
 							tmpBoard.setPieceAt(oldPosition, null);
 							tmpBoard.setPieceAt(tryPos, tmpPiece);
-							if (tmpBoard.isInCheck(this.isWhite)) {
+							if (tmpBoard.isInCheck(this.isWhite())) {
 								return false;
 							}
 							tmpBoard.setPieceAt(oldPosition, tmpPiece);
@@ -64,8 +67,8 @@ public class King extends PieceImpl implements Piece {
 		return isValid;
 	}
 	
-	public String toString() {
-		if(isWhite) {
+	public String toString () {
+		if(this.isWhite()) {
 			return "K";
 		} else {
 			return "k";

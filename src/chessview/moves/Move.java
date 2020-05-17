@@ -1,36 +1,102 @@
 package chessview.moves;
 
 import chessview.*;
+import chessview.pieces.*;
 
 /**
- * A move is any move which is permitted by either the white or black player.
- * This includes simple moves (where pieces just take on new positions), take
- * moves (where a piece is taken as well), and check moves (where the opponent
- * is put into check)
- * 
- * @author djp
+ * @author hung
+ *
  * 
  */
-public interface Move {
+public abstract class Move implements ICheckable {
+	protected Piece piece;
+	protected Position oldPosition;
+	protected Position newPosition;
+	private boolean isCheckmate;
+	
+	
+	public Move (Piece piece, Position oldPosition, Position newPosition) {
+		this.piece = piece;
+		this.oldPosition = oldPosition;
+		this.newPosition = newPosition;
+	}
+	
+	public Move (Move move) {
+		this.piece = move.piece;
+		this.oldPosition = move.oldPosition;
+		this.newPosition = move.newPosition;
+	}
+	
+	protected Move () { }
+	
 	/**
 	 * Check whether this move is valid or not.
 	 * 
 	 * @param board
 	 * @return
 	 */
-	public boolean isValid(Board board);
+	public abstract boolean isValid (Board board);
 
 	/**
 	 * Update the board to reflect the board after the move is played.
 	 * 
 	 * @param board
 	 */
-	public void apply(Board board);
+	public abstract void apply (Board board);
 	
 	/**
 	 * Is this move for white or black?
 	 * 
 	 * @return
 	 */
-	public boolean isWhite();
+	public boolean isWhite () {
+		return this.piece.isWhite();
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean getIsCheckmate () {
+		return this.isCheckmate;
+	}
+	
+	/**
+	 * @param isCheckate
+	 * @return
+	 */
+	public void setIsCheckmate (boolean isCheckmate) {
+		this.isCheckmate = isCheckmate;
+	}
+	
+	public boolean checkmateState (Move move, Board board) {
+	    move.apply(board);
+	    return board.isInCheck(!this.isWhite());
+	}
+	
+	public String toStringCheckmate () {
+		if (this.isCheckmate)
+			return "+";
+		else
+			return "";
+	}
+	
+	public abstract String toString ();
+	
+	protected static String pieceChar(Piece p) {
+		if(p instanceof Pawn) {
+			return "";
+		} else if(p instanceof Knight) {
+			return "N";
+		} else if(p instanceof Bishop) {
+			return "B";
+		} else if(p instanceof Rook) {
+			return "R";
+		} else if(p instanceof Queen) {
+			return "Q";
+		} else {
+			return "K";
+		}
+	}
 }

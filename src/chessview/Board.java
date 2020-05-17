@@ -53,7 +53,7 @@ public class Board {
 			for(int col=1;col<=8;++col) {
 				this.pieces[row][col] = board.pieces[row][col];
 			}	
-		}		
+		}
 	}
 
 	/**
@@ -65,11 +65,11 @@ public class Board {
 	 */
 	public boolean apply(Move move) {		
 		if(move.isValid(this)) {						
-			move.apply(this);			
-			return true;			
-		} else {			
-			return false;			
+			move.apply(this);
+		    return true;			
 		}
+		
+		return false;
 	}
 	
 	/**

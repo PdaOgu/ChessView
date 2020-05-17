@@ -3,10 +3,8 @@ package chessview.viewer;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
-import javax.swing.*;
 import chessview.*;
 import chessview.moves.*;
-import chessview.pieces.*;
 
 public class RoundCanvas extends Canvas {
 	private ArrayList<Round> rounds;

@@ -1,31 +1,42 @@
 package chessview.moves;
 
-import chessview.*;
-import chessview.pieces.*;
+import chessview.Board;
+import chessview.Position;
+import chessview.pieces.Piece;
 
 /**
- * This represents a pawn promotion.
- * @author djp
+ * @author hung
+ *
  *
  */
-public class PawnPromotion implements MultiPieceMove {
+public class PawnPromotion extends SimpleMove {
+
 	private Piece promotion;
-	
-	public PawnPromotion(SinglePieceMove move, Piece promotion) {						
+
+	/**
+	 * @param piece
+	 * @param oldPosition
+	 * @param newPosition
+	 */
+	public PawnPromotion (Move move, Piece promotion) {
+		super(move);
+		this.promotion = promotion;
 	}
-	
-	public boolean isWhite() {
-		return false;
+
+	@Override
+	public boolean isValid (Board board) {
+        return this.piece.isValidMove(this.oldPosition, this.newPosition, null, board);
 	}
-	
-	public boolean isValid(Board board) {				
-		return false;
+
+	@Override
+	public void apply (Board board) {
+		board.move(this.oldPosition, this.newPosition);
+		board.setPieceAt(this.newPosition, this.promotion);
 	}
-	
-	public void apply(Board board) {
+
+	@Override
+	public String toString () {
+		return super.toString() + "=" + SimpleMove.pieceChar(this.promotion) + this.toStringCheckmate();
 	}
-	
-	public String toString() {
-		return super.toString() + "=" + SinglePieceMove.pieceChar(promotion);
-	}
+
 }

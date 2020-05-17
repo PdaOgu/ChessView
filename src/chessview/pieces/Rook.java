@@ -2,14 +2,14 @@ package chessview.pieces;
 
 import chessview.*;
 
-public class Rook extends PieceImpl implements Piece {
+public class Rook extends Piece {
 	boolean isFirstMove;
-	public Rook(boolean isWhite) {
+	public Rook (boolean isWhite) {
 		super(isWhite);
 		this.isFirstMove = true;
 	}
 	
-	public boolean isValidMove(Position oldPosition, Position newPosition,
+	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 		
 		if (!Position.isValid(oldPosition)
@@ -20,8 +20,11 @@ public class Rook extends PieceImpl implements Piece {
 		Piece t = board.pieceAt(newPosition);
 				
 		if (!this.equals(p)
-				|| (isTaken != null && (!isTaken.equals(t) || p.isWhite() == isTaken.isWhite())))
-			return false;
+                || (t == null && isTaken != null)            
+                || (t != null && isTaken == null)              
+                || (t != null && !t.equals(isTaken))            
+                || (t != null && t.isWhite() == this.isWhite()))
+            return false;
 		
 		boolean isValid = board.clearColumnExcept(oldPosition, newPosition, p, t)
 						|| board.clearRowExcept(oldPosition, newPosition, p, t);
@@ -31,8 +34,8 @@ public class Rook extends PieceImpl implements Piece {
 		return isValid; 
 	}
 	
-	public String toString() {
-		if(isWhite) {
+	public String toString () {
+		if(this.isWhite()) {
 			return "R";
 		} else {
 			return "r";

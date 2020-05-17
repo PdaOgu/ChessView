@@ -1,7 +1,5 @@
 package chessview;
 
-import chessview.pieces.Piece;
-
 public final class Position {
 	private int row; // must be between 1 and 8
 	private int col; // must be between 1 and 8
