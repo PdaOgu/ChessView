@@ -34,7 +34,9 @@ public class TakeMove extends Move {
 
 	@Override
 	public boolean isValid (Board board) {
-		return this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board);
+	    Board temp = new Board(board);
+		return this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board)
+		        && (this.checkmateState(this, temp) == this.getIsCheckmate());
 	}
 
 	@Override

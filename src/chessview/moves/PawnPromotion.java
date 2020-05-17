@@ -9,8 +9,9 @@ import chessview.pieces.Piece;
  *
  *
  */
-public class PawnPromotion extends SimpleMove {
+public class PawnPromotion extends Move {
 
+    private Piece isTaken;
 	private Piece promotion;
 
 	/**
@@ -20,12 +21,20 @@ public class PawnPromotion extends SimpleMove {
 	 */
 	public PawnPromotion (Move move, Piece promotion) {
 		super(move);
+		this.isTaken = null;
+		if (move instanceof TakeMove)
+		    this.isTaken = ((TakeMove) move).isTaken;
 		this.promotion = promotion;
 	}
 
 	@Override
 	public boolean isValid (Board board) {
-        return this.piece.isValidMove(this.oldPosition, this.newPosition, null, board);
+	    Board temp = new Board(board);
+	    boolean isValidPosition = ((this.isWhite() && this.newPosition.row() == 8)
+	                                || (!this.isWhite() && this.newPosition.row() == 1));
+	    return isValidPosition
+                && this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board)
+                && (this.checkmateState(this, temp) == this.getIsCheckmate());
 	}
 
 	@Override
@@ -36,7 +45,9 @@ public class PawnPromotion extends SimpleMove {
 
 	@Override
 	public String toString () {
-		return super.toString() + "=" + SimpleMove.pieceChar(this.promotion) + this.toStringCheckmate();
+		return pieceChar(this.piece) + this.oldPosition + (this.isTaken == null ? "-" : "x") +
+	           pieceChar(this.isTaken) + this.newPosition+ "="
+		        + SimpleMove.pieceChar(this.promotion) + this.toStringCheckmate();
 	}
 
 }

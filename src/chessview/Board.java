@@ -66,7 +66,8 @@ public class Board {
 	public boolean apply(Move move) {		
 		if(move.isValid(this)) {						
 			move.apply(this);
-		    return true;			
+			if (!this.isInCheck(move.isWhite()))
+			    return true;			
 		}
 		
 		return false;

@@ -3,15 +3,6 @@ package chessview.pieces;
 import chessview.*;
 
 public class Pawn extends Piece {
-	private boolean isFirstMove;
-	public boolean isFirstMove () {
-        return isFirstMove;
-    }
-
-    public void setFirstMove (boolean isFirstMove) {
-        this.isFirstMove = isFirstMove;
-    }
-
     private boolean canEnPassant;
 	
 	public boolean canEnPassant () {
@@ -20,16 +11,11 @@ public class Pawn extends Piece {
 
     public Pawn (boolean isWhite) {
 		super(isWhite);
-		this.isFirstMove = true;		
 		this.canEnPassant = false;		
 	}
 	
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
-	    
-	    if (!this.isFirstMove) {
-	        this.canEnPassant = false;
-	    }
 	    
 		int dir = this.isWhite() ? 1 : -1;
 		int oldRow = oldPosition.row();
@@ -47,6 +33,12 @@ public class Pawn extends Piece {
 		if (!this.equals(p))
 			return false;
 		
+		boolean isFirstMove = false;
+		
+		if ((this.isWhite() && oldRow == 2)
+		    || (!this.isWhite() && oldRow == 7))
+		    isFirstMove = true;
+		
 		
 		boolean isValid = false;
 		
@@ -56,7 +48,8 @@ public class Pawn extends Piece {
 					if (oldRow + dir == newRow) {	       // move forward 1 square
 						isValid = true;
 					} else if (oldRow + dir + dir == newRow
-					        && this.isFirstMove) {	       // move forward 2 squares
+					        && isFirstMove
+					        && board.pieceAt(new Position(oldRow + dir, oldCol)) == null) {	       // move forward 2 squares
 						isValid = true;
 						this.canEnPassant = true;
 					}

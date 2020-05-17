@@ -30,9 +30,6 @@ public class SimpleMove extends Move {
 	@Override
 	public void apply (Board board) {
 		board.move(this.oldPosition, this.newPosition);
-		if (this.piece instanceof Pawn) {
-		    ((Pawn) this.piece).setFirstMove(false);
-		}
 	}
 
 	@Override
