@@ -3,14 +3,13 @@ package chessview.pieces;
 import chessview.*;
 
 public class King extends Piece {
-	boolean isFirstMove;
 	public King (boolean isWhite) {
 		super(isWhite);
-		this.isFirstMove = true;
 	}	
 	
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
+	    
 		int oldRow = oldPosition.row();
 		int oldCol = oldPosition.column();
 		int newRow = newPosition.row();
@@ -43,7 +42,7 @@ public class King extends Piece {
 					Position rookPos = new Position(oldRow, newCol == 3 ? 1 : 8);
 					Piece rook = board.pieceAt(rookPos);
 					
-					if (this.isFirstMove && ((Rook) rook).isFirstMove
+					if (p.getMoveCounter() == 0 && rook.getMoveCounter() == 0
 							&& board.clearRowExcept(oldPosition, rookPos, p, rook)) {
 						int increment = newCol == 3 ? -1 : +1;
 						Board tmpBoard = new Board(board);

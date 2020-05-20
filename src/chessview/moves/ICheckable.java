@@ -14,5 +14,5 @@ public interface ICheckable {
 	public boolean getIsCheckmate ();
 	public void setIsCheckmate (boolean isCheckmate);
 	public String toStringCheckmate ();
-	public boolean checkmateState (Move move, Board board);
+//	public boolean checkmateState (Move move, Board board);
 }

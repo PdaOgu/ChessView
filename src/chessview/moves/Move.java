@@ -70,16 +70,28 @@ public abstract class Move implements ICheckable {
 		this.isCheckmate = isCheckmate;
 	}
 	
-	public boolean checkmateState (Move move, Board board) {
-	    move.apply(board);
-	    return board.isInCheck(!this.isWhite());
-	}
+//	public boolean checkmateState (Move move, Board board) {
+//	    move.apply(board);
+//	    return board.isInCheck(!this.isWhite());
+//	}
 	
 	public String toStringCheckmate () {
 		if (this.isCheckmate)
 			return "+";
 		else
 			return "";
+	}
+	
+	protected void incMoveCounter (Board board) {
+        Piece p = board.pieceAt(oldPosition);
+        p.setMoveCounter(p.getMoveCounter() + 1);
+        if (p instanceof Pawn) {
+            if (Math.abs(this.oldPosition.row() - this.newPosition.row()) == 1) {
+                ((Pawn) p).setCanBeEnPassant(false);
+            } else {
+                ((Pawn) p).setCanBeEnPassant(true);
+            }
+        }
 	}
 	
 	public abstract String toString ();

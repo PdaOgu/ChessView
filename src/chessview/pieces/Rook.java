@@ -3,10 +3,9 @@ package chessview.pieces;
 import chessview.*;
 
 public class Rook extends Piece {
-	boolean isFirstMove;
-	public Rook (boolean isWhite) {
+
+    public Rook (boolean isWhite) {
 		super(isWhite);
-		this.isFirstMove = true;
 	}
 	
 	public boolean isValidMove (Position oldPosition, Position newPosition,
@@ -28,8 +27,6 @@ public class Rook extends Piece {
 		
 		boolean isValid = board.clearColumnExcept(oldPosition, newPosition, p, t)
 						|| board.clearRowExcept(oldPosition, newPosition, p, t);
-		if (isValid)
-			this.isFirstMove = false;
 		
 		return isValid; 
 	}

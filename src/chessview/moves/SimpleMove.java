@@ -22,14 +22,13 @@ public class SimpleMove extends Move {
 	
 	@Override
 	public boolean isValid (Board board) {
-	    Board temp = new Board(board);
-		return this.piece.isValidMove(this.oldPosition, this.newPosition, null, board)
-		        && (this.checkmateState(this, temp) == this.getIsCheckmate());
+		return this.piece.isValidMove(this.oldPosition, this.newPosition, null, board);
 	}
 
 	@Override
 	public void apply (Board board) {
-		board.move(this.oldPosition, this.newPosition);
+	    this.incMoveCounter(board);
+	    board.move(this.oldPosition, this.newPosition);
 	}
 
 	@Override

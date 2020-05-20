@@ -66,8 +66,10 @@ public class Board {
 	public boolean apply(Move move) {		
 		if(move.isValid(this)) {						
 			move.apply(this);
-			if (!this.isInCheck(move.isWhite()))
-			    return true;			
+			if (!this.isInCheck(move.isWhite())
+			    && this.isInCheck(!move.isWhite()) == move.getIsCheckmate()) {
+			    return true;
+			}
 		}
 		
 		return false;

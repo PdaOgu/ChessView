@@ -8,6 +8,7 @@ public abstract class Piece {
 	
 	public Piece (boolean isWhite) {		
 		this.isWhite = isWhite;
+		this.moveCounter = 0;
 	}
 
 	/**
@@ -39,7 +40,17 @@ public abstract class Piece {
 	
 	public abstract String toString ();
 	
-	public boolean equals (Object o) {
+	private int moveCounter;
+	
+	public int getMoveCounter () {
+        return moveCounter;
+    }
+
+    public void setMoveCounter (int moveCounter) {
+        this.moveCounter = moveCounter;
+    }
+    
+    public boolean equals (Object o) {
 		if (o instanceof Piece) {
 			Piece p = (Piece) o;
 			return o.getClass() == this.getClass() && this.isWhite == p.isWhite();

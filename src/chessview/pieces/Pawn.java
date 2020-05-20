@@ -3,15 +3,19 @@ package chessview.pieces;
 import chessview.*;
 
 public class Pawn extends Piece {
-    private boolean canEnPassant;
+    private boolean canBeEnPassant;
 	
-	public boolean canEnPassant () {
-        return canEnPassant;
+	public boolean canBeEnPassant () {
+        return canBeEnPassant;
+    }
+	
+	public void setCanBeEnPassant (boolean canBeEnPassant) {
+        this.canBeEnPassant = canBeEnPassant;
     }
 
     public Pawn (boolean isWhite) {
 		super(isWhite);
-		this.canEnPassant = false;		
+		this.canBeEnPassant = false;		
 	}
 	
 	public boolean isValidMove (Position oldPosition, Position newPosition,
@@ -33,13 +37,6 @@ public class Pawn extends Piece {
 		if (!this.equals(p))
 			return false;
 		
-		boolean isFirstMove = false;
-		
-		if ((this.isWhite() && oldRow == 2)
-		    || (!this.isWhite() && oldRow == 7))
-		    isFirstMove = true;
-		
-		
 		boolean isValid = false;
 		
 		if (isTaken == null) {				// simple move, not take any piece
@@ -48,10 +45,9 @@ public class Pawn extends Piece {
 					if (oldRow + dir == newRow) {	       // move forward 1 square
 						isValid = true;
 					} else if (oldRow + dir + dir == newRow
-					        && isFirstMove
+					        && p.getMoveCounter() == 0
 					        && board.pieceAt(new Position(oldRow + dir, oldCol)) == null) {	       // move forward 2 squares
 						isValid = true;
-						this.canEnPassant = true;
 					}
 				}
 			}
@@ -64,9 +60,9 @@ public class Pawn extends Piece {
 					if ((isTaken instanceof Pawn)
 							&& isTaken.equals(adjacent)
 							&& this.isWhite() != isTaken.isWhite()) {
-						if (((Pawn) isTaken).canEnPassant()
-								&& (this.isWhite() && oldRow == 5)
-								&& (!this.isWhite() && oldRow == 4)) {
+						if (((Pawn) isTaken).canBeEnPassant()
+								&& ((this.isWhite() && oldRow == 5)
+								|| (!this.isWhite() && oldRow == 4))) {
 							isValid = true;
 						}
 					}

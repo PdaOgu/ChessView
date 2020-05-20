@@ -29,16 +29,15 @@ public class PawnPromotion extends Move {
 
 	@Override
 	public boolean isValid (Board board) {
-	    Board temp = new Board(board);
 	    boolean isValidPosition = ((this.isWhite() && this.newPosition.row() == 8)
 	                                || (!this.isWhite() && this.newPosition.row() == 1));
 	    return isValidPosition
-                && this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board)
-                && (this.checkmateState(this, temp) == this.getIsCheckmate());
+                && this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board);
 	}
 
 	@Override
 	public void apply (Board board) {
+	    this.incMoveCounter(board);
 		board.move(this.oldPosition, this.newPosition);
 		board.setPieceAt(this.newPosition, this.promotion);
 	}
