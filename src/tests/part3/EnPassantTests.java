@@ -37,11 +37,11 @@ public class EnPassantTests extends TestCase {
 
 
 				//additional test case
-				{"b2-b4 a7-a6\nb4-b5 c7-b5\nb5xa6ep",
+				{"b2-b4 a7-a6\nb4-b5 c7-c5\nb5xc6ep",
 				 "8|r|n|b|q|k|b|n|r|\n"+
 				 "7|_|p|_|p|p|p|p|p|\n"+
-				 "6|P|_|_|_|_|_|_|_|\n"+
-				 "5|_|_|p|_|_|_|_|_|\n"+
+				 "6|p|_|P|_|_|_|_|_|\n"+
+				 "5|_|_|_|_|_|_|_|_|\n"+
 				 "4|_|_|_|_|_|_|_|_|\n"+
 				 "3|_|_|_|_|_|_|_|_|\n"+
 				 "2|P|_|P|P|P|P|P|P|\n"+
