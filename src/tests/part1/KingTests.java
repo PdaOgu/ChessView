@@ -58,5 +58,22 @@ public class KingTests extends TestCase {
 				}			
 		};
 		checkValidTests(tests);
-	}	
+	}
+	// additional test cases
+	public @Test void testKingTakes() {
+		String[][] tests = {
+			{"e2-e3 e7-e5\nKe1-e2 d7-d5\ne3-e4 d5-d4\nKe2-d3 c7-c5\nKd3-c4 d4-d3\nf2-f3 Qd8-g5\nKc4xd3",
+				"8|r|n|b|_|k|b|n|r|\n"+
+				"7|p|p|_|_|_|p|p|p|\n"+
+				"6|_|_|_|_|_|_|_|_|\n"+
+				"5|_|_|p|_|p|_|q|_|\n"+
+				"4|_|_|_|_|P|_|_|_|\n"+
+				"3|_|_|_|K|_|P|_|_|\n"+
+				"2|P|P|P|P|_|_|P|P|\n"+
+				"1|R|N|B|Q|_|B|N|R|\n"+
+				"  a b c d e f g h"
+	 		}
+		};
+		checkValidTests(tests);
+	}
 }
