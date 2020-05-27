@@ -55,7 +55,19 @@ public class KnightTests extends TestCase {
 				 "2|P|P|_|P|P|P|P|P|\n"+
 				 "1|R|N|B|Q|K|B|_|R|\n"+
 				 "  a b c d e f g h"
-				}					
+				},
+				//additional test case
+				{"Ng1-f3 Ng8-f6\nd2-d3 Nf6-e4\nNf3-e5 Ne4-d2",
+				 "8|r|n|b|q|k|b|_|r|\n"+
+				 "7|p|p|p|p|p|p|p|p|\n"+
+				 "6|_|_|_|_|_|_|_|_|\n"+
+				 "5|_|_|_|_|N|_|_|_|\n"+
+				 "4|_|_|_|_|_|_|_|_|\n"+
+				 "3|_|_|_|P|_|_|_|_|\n"+
+				 "2|P|P|P|n|P|P|P|P|\n"+
+				 "1|R|N|B|Q|K|B|_|R|\n"+
+				 "  a b c d e f g h"
+				}
 		};
 		checkValidTests(tests);
 	}

@@ -1,0 +1,5 @@
+a2-a3 d7-d5
+b2-b3 Qd8-d6
+c2-c3 Bc8-e6
+d2-d3 Nb8-a6
+e2-e3 O-O-O

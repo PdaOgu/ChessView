@@ -11,7 +11,7 @@ public class Main {
 			if (args.length > 0) {
 				path = args[0];
 			} else {
-				path = "/home/hung/source/repos/ChessView/failure-test.txt";
+				path = "/home/ductiendo/Workspaces/ICT/3/OOP_Lab/sol/ChessView/test-case.txt";
 			}
 			ChessGame game = new ChessGame(new FileReader(path));			
 			new BoardFrame(game);

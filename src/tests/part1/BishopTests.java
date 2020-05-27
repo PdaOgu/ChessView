@@ -55,8 +55,34 @@ public class BishopTests extends TestCase {
 				 "2|P|P|P|_|P|P|P|P|\n"+
 				 "1|R|N|_|Q|K|B|N|R|\n"+
 				 "  a b c d e f g h"
-				}				
-		};
+				},				
+			
+			// new test cases
+
+				{"d2-d3 d7-d6\nBc1-e3 Bc8-e6\nBe3-b6 Be6-h3",
+				 "8|r|n|_|q|k|b|n|r|\n"+
+				 "7|p|p|p|_|p|p|p|p|\n"+
+				 "6|_|B|_|p|_|_|_|_|\n"+
+				 "5|_|_|_|_|_|_|_|_|\n"+
+				 "4|_|_|_|_|_|_|_|_|\n"+
+				 "3|_|_|_|P|_|_|_|b|\n"+
+				 "2|P|P|P|_|P|P|P|P|\n"+
+				 "1|R|N|_|Q|K|B|N|R|\n"+
+				 "  a b c d e f g h"
+				},
+			
+				{"d2-d3 d7-d6\nBc1-e3 Bc8-e6\nBe3-b6 Be6-b3\nBb6-a5 Bb3-a4",
+				 "8|r|n|_|q|k|b|n|r|\n"+
+				 "7|p|p|p|_|p|p|p|p|\n"+
+				 "6|_|_|_|p|_|_|_|_|\n"+
+				 "5|B|_|_|_|_|_|_|_|\n"+
+				 "4|b|_|_|_|_|_|_|_|\n"+
+				 "3|_|_|_|P|_|_|_|_|\n"+
+				 "2|P|P|P|_|P|P|P|P|\n"+
+				 "1|R|N|_|Q|K|B|N|R|\n"+
+				 "  a b c d e f g h"
+				},
+			};
 		checkValidTests(tests);
 	}
 	
@@ -109,7 +135,23 @@ public class BishopTests extends TestCase {
 				 "2|P|b|P|P|_|P|P|P|\n"+
 				 "1|R|N|B|Q|K|_|N|R|\n"+
 				 "  a b c d e f g h"
-				}
+				},
+				
+
+				//additional test case
+				{"e2-e4 e7-e5\nc2-c4 Bf8-b4\nc4-c5 Bb4-c3",
+				 "8|r|n|b|q|k|_|n|r|\n"+
+				 "7|p|p|p|p|_|p|p|p|\n"+
+				 "6|_|_|_|_|_|_|_|_|\n"+
+				 "5|_|_|P|_|p|_|_|_|\n"+
+				 "4|_|_|_|_|P|_|_|_|\n"+
+				 "3|_|_|b|_|_|_|_|_|\n"+
+				 "2|P|P|_|P|_|P|P|P|\n"+
+				 "1|R|N|B|Q|K|B|N|R|\n"+
+				 "  a b c d e f g h"
+				},
+
+
 		};
 		
 		checkValidTests(tests);
