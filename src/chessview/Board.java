@@ -2,7 +2,12 @@ package chessview;
 
 import chessview.moves.Move;
 import chessview.pieces.*;
-
+/**
+ * this class construct board: 
+ * initial board, with moves applied,
+ * and check rows and columns when moving chess pieces.
+ * @author hung
+ */
 public class Board {
 	private Piece[][] pieces; // this is the underlying data structure for a board.
 	
@@ -239,11 +244,11 @@ public class Board {
 	 * clear, except for a given set of pieces. Observe that this doesn't
 	 * guarantee a given row move is valid, since this method does not
 	 * ensure anything about the relative positions of the given pieces.
-	 * 
+	 *
 	 * @param startPosition - start of row
 	 * @param endPosition - end of row
 	 * @param exceptions - the list of pieces allowed on the row
-	 * @return
+	 * @return true, if successful
 	 */
 	public boolean clearRowExcept(Position startPosition,
 			Position endPosition, Piece... exceptions) {			

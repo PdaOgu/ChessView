@@ -3,7 +3,10 @@ package chessview;
 import java.util.*;
 import java.io.*;
 import chessview.viewer.*;
-
+/**
+ * this class is the entry point of this program
+ * @author hung
+ */
 public class Main {
 	public static void main(String[] args) {
 		var path = "";

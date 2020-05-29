@@ -13,8 +13,16 @@ import chessview.pieces.*;
  * 
  */
 public class ChessGame {
+    
+    /** The rounds. */
     private ArrayList<Round> rounds;
     
+    /**
+     * Instantiates a new chess game.
+     *
+     * @param sheet 
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public ChessGame(String sheet) throws IOException {
         this(new StringReader(sheet));
     }
@@ -22,8 +30,9 @@ public class ChessGame {
     /**
      * Construct a ChessGame object from a given game sheet, where each round occurs
      * on a new line.
-     * 
-     * @param gameSheet
+     *
+     * @param input 
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public ChessGame(Reader input) throws IOException {
         rounds = new ArrayList<Round>();
@@ -49,6 +58,11 @@ public class ChessGame {
         }
     }
     
+    /**
+     * Rounds.
+     *
+     * @return the list
+     */
     public List<Round> rounds () {
         return rounds;
     }
@@ -56,8 +70,8 @@ public class ChessGame {
     /**
      * This method computes the list of boards which make up the game. If an invalid
      * move, or board is encountered then a RuntimeException is thrown.
-     * 
-     * @return
+     *
+     * @return the list
      */
     public List<Board> boards () {
         ArrayList<Board> boards = new ArrayList<Board>();
@@ -88,9 +102,10 @@ public class ChessGame {
     
     /**
      * Construct a move object from a given string.
-     * 
-     * @param str
-     * @return
+     *
+     * @param str 
+     * @param isWhite the is white
+     * @return the move
      */
     private static Move moveFromString (String str, boolean isWhite) {
         Piece piece;
@@ -219,6 +234,12 @@ public class ChessGame {
         return move;
     }
     
+    /**
+     * Position from string.
+     *
+     * @param pos 
+     * @return the position
+     */
     private static Position positionFromString (String pos) {
         if (pos.length() != 2) {
             throw new IllegalArgumentException("invalid position: " + pos);
