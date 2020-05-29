@@ -104,7 +104,7 @@ public class ChessGame {
      * Construct a move object from a given string.
      *
      * @param str 
-     * @param isWhite the is white
+     * @param isWhite 
      * @return the move
      */
     private static Move moveFromString (String str, boolean isWhite) {

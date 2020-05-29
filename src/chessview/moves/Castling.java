@@ -5,8 +5,8 @@ import chessview.Position;
 import chessview.pieces.Piece;
 
 /**
- * The Class Castling.
- *
+ * The Class Castling
+ * which implement castling move in chess
  * @author hung
  */
 public class Castling extends Move {
@@ -57,7 +57,7 @@ public class Castling extends Move {
 	/**
 	 * Apply.
 	 *
-	 * @param board the board
+	 * @param board 
 	 */
 	@Override
 	public void apply (Board board) {

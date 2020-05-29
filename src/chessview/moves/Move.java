@@ -4,50 +4,73 @@ import chessview.*;
 import chessview.pieces.*;
 
 /**
+ * The Class Move
+ * which implement moving of chess pieces
  * @author hung
- *
- * 
  */
 public abstract class Move implements ICheckable {
+	
+	/** The piece. */
 	protected Piece piece;
+	
+	/** The old position. */
 	protected Position oldPosition;
+	
+	/** The new position. */
 	protected Position newPosition;
+	
+	/** The is checkmate. */
 	private boolean isCheckmate;
 	
 	
+	/**
+	 * Instantiates a new move.
+	 *
+	 * @param piece the piece
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 */
 	public Move (Piece piece, Position oldPosition, Position newPosition) {
 		this.piece = piece;
 		this.oldPosition = oldPosition;
 		this.newPosition = newPosition;
 	}
 	
+	/**
+	 * Instantiates a new move.
+	 *
+	 * @param move 
+	 */
 	public Move (Move move) {
 		this.piece = move.piece;
 		this.oldPosition = move.oldPosition;
 		this.newPosition = move.newPosition;
 	}
 	
+	/**
+	 * Instantiates a new move.
+	 */
 	protected Move () { }
 	
 	/**
 	 * Check whether this move is valid or not.
-	 * 
-	 * @param board
-	 * @return
+	 *
+	 * @param board 
+	 * @return true, if is valid
 	 */
 	public abstract boolean isValid (Board board);
 
 	/**
 	 * Update the board to reflect the board after the move is played.
-	 * 
-	 * @param board
+	 *
+	 * @param board 
 	 */
 	public abstract void apply (Board board);
 	
 	/**
-	 * Is this move for white or black?
-	 * 
-	 * @return
+	 * Is this move for white or black?.
+	 *
+	 * @return true, if is white
 	 */
 	public boolean isWhite () {
 		return this.piece.isWhite();
@@ -55,26 +78,40 @@ public abstract class Move implements ICheckable {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * Gets the checks if is checkmate.
+	 *
+	 * @return the checks if is checkmate
 	 */
 	public boolean getIsCheckmate () {
 		return this.isCheckmate;
 	}
 	
 	/**
-	 * @param isCheckate
-	 * @return
+	 * Sets the checks if is checkmate.
+	 *
+	 * @param isCheckmate the new checks if is checkmate
 	 */
 	public void setIsCheckmate (boolean isCheckmate) {
 		this.isCheckmate = isCheckmate;
 	}
 	
+	/**
+	 * Checkmate state.
+	 *
+	 * @param move the move
+	 * @param board the board
+	 * @return true, if successful
+	 */
 	public boolean checkmateState (Move move, Board board) {
 	    move.apply(board);
 	    return board.isInCheck(!this.isWhite());
 	}
 	
+	/**
+	 * To string checkmate.
+	 *
+	 * @return the string
+	 */
 	public String toStringCheckmate () {
 		if (this.isCheckmate)
 			return "+";
@@ -82,8 +119,19 @@ public abstract class Move implements ICheckable {
 			return "";
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public abstract String toString ();
 	
+	/**
+	 * Piece char.
+	 *
+	 * @param p 
+	 * @return the string
+	 */
 	protected static String pieceChar(Piece p) {
 		if(p instanceof Pawn) {
 			return "";

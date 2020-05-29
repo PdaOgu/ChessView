@@ -5,19 +5,23 @@ import chessview.Position;
 import chessview.pieces.Piece;
 
 /**
+ * The Class PawnPromotion
+ * which implement pawn promotion move in chess
  * @author hung
- *
- *
  */
 public class PawnPromotion extends Move {
 
+    /** The is taken. */
     private Piece isTaken;
+	
+	/** The promotion. */
 	private Piece promotion;
 
 	/**
-	 * @param piece
-	 * @param oldPosition
-	 * @param newPosition
+	 * Instantiates a new pawn promotion.
+	 *
+	 * @param move 
+	 * @param promotion 
 	 */
 	public PawnPromotion (Move move, Piece promotion) {
 		super(move);
@@ -27,6 +31,12 @@ public class PawnPromotion extends Move {
 		this.promotion = promotion;
 	}
 
+	/**
+	 * Checks if is valid.
+	 *
+	 * @param board 
+	 * @return true, if is valid
+	 */
 	@Override
 	public boolean isValid (Board board) {
 	    Board temp = new Board(board);
@@ -37,12 +47,22 @@ public class PawnPromotion extends Move {
                 && (this.checkmateState(this, temp) == this.getIsCheckmate());
 	}
 
+	/**
+	 * Apply.
+	 *
+	 * @param board 
+	 */
 	@Override
 	public void apply (Board board) {
 		board.move(this.oldPosition, this.newPosition);
 		board.setPieceAt(this.newPosition, this.promotion);
 	}
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString () {
 		return pieceChar(this.piece) + this.oldPosition + (this.isTaken == null ? "-" : "x") +

@@ -3,11 +3,19 @@ package chessview;
 import java.util.*;
 import java.io.*;
 import chessview.viewer.*;
+
 /**
- * this class is the entry point of this program
+ * this class is the entry point of this program.
+ *
  * @author hung
  */
 public class Main {
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		var path = "";
 		try {
@@ -25,6 +33,11 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Text view.
+	 *
+	 * @param game 
+	 */
 	public static void textView(ChessGame game) {
 		try {			
 			List<Board> boards = game.boards();
