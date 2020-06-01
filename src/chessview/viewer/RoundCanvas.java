@@ -6,13 +6,32 @@ import java.util.List;
 import chessview.*;
 import chessview.moves.*;
 
+/**
+ * The Class RoundCanvas.
+ */
 public class RoundCanvas extends Canvas {
+	
+	/** The rounds. */
 	private ArrayList<Round> rounds;
+	
+	/** The boards. */
 	private ArrayList<Board> boards;
+	
+	/** The index. */
 	private int index = 0;
+	
+	/** The preferred fonts. */
 	private static String[] preferredFonts = {"Arial","Times New Roman"};
+	
+	/** The font. */
 	private Font font;
 	
+	/**
+	 * Instantiates a new round canvas.
+	 *
+	 * @param rounds 
+	 * @param boards 
+	 */
 	public RoundCanvas(List<Round> rounds, List<Board> boards) {
 		this.rounds = new ArrayList<Round>(rounds);
 		this.boards = new ArrayList<Board>(boards);
@@ -32,6 +51,11 @@ public class RoundCanvas extends Canvas {
 		}
 	}
 	
+	/**
+	 * Paint.
+	 *
+	 * @param g the g
+	 */
 	public void paint(Graphics g) {		
 		g.setColor(Color.WHITE);
 		g.fillRect(0,0,getWidth(),getHeight());		
@@ -76,11 +100,21 @@ public class RoundCanvas extends Canvas {
 	}
 	
 
+	/**
+	 * Fwd.
+	 *
+	 * @param amount 
+	 */
 	public void fwd(int amount) {
 		index = Math.min(boards.size()-1,index + amount);
 		repaint();		
 	}
 	
+	/**
+	 * Bwd.
+	 *
+	 * @param amount 
+	 */
 	public void bwd(int amount) {
 		index = Math.max(0,index - amount);
 		repaint();		

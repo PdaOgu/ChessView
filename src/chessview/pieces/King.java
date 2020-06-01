@@ -2,15 +2,33 @@ package chessview.pieces;
 
 import chessview.*;
 
+/**
+ * The Class King.
+ * implement king piece
+ */
 public class King extends Piece {
-	boolean isFirstMove;
+	
+	/**
+	 * Instantiates a new king.
+	 *
+	 * @param isWhite the is white
+	 */
 	public King (boolean isWhite) {
 		super(isWhite);
-		this.isFirstMove = true;
 	}	
 	
+	/**
+	 * Checks if is valid move.
+	 *
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 * @param isTaken the is taken
+	 * @param board the board
+	 * @return true, if it is valid move
+	 */
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
+	    
 		int oldRow = oldPosition.row();
 		int oldCol = oldPosition.column();
 		int newRow = newPosition.row();
@@ -43,7 +61,7 @@ public class King extends Piece {
 					Position rookPos = new Position(oldRow, newCol == 3 ? 1 : 8);
 					Piece rook = board.pieceAt(rookPos);
 					
-					if (this.isFirstMove && ((Rook) rook).isFirstMove
+					if (p.getMoveCounter() == 0 && rook.getMoveCounter() == 0
 							&& board.clearRowExcept(oldPosition, rookPos, p, rook)) {
 						int increment = newCol == 3 ? -1 : +1;
 						Board tmpBoard = new Board(board);
@@ -67,6 +85,11 @@ public class King extends Piece {
 		return isValid;
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString () {
 		if(this.isWhite()) {
 			return "K";

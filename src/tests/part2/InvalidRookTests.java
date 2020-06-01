@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidRookTests.
+ */
 public class InvalidRookTests extends TestCase {
 	
+	/**
+	 * Test invalid rook moves.
+	 */
 	public @Test void testInvalidRookMoves() {
 		String[] tests = { 
 				
@@ -13,6 +19,9 @@ public class InvalidRookTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid rook takes.
+	 */
 	public @Test void testInvalidRookTakes() {
 		String[] tests = {				
 				

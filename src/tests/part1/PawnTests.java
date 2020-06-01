@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class PawnTests.
+ */
 public class PawnTests extends TestCase {
 	
+	/**
+	 * Test pawn moves.
+	 */
 	public @Test void testPawnMoves() {
 		String[][] tests = { 
 				// Test 1
@@ -60,6 +66,9 @@ public class PawnTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test pawn takes.
+	 */
 	public @Test void testPawnTakes() {
 		String[][] tests = {
 				// Test 1

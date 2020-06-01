@@ -75,8 +75,10 @@ public class Board {
 	public boolean apply(Move move) {		
 		if(move.isValid(this)) {						
 			move.apply(this);
-			if (!this.isInCheck(move.isWhite()))
-			    return true;			
+			if (!this.isInCheck(move.isWhite())
+			    && this.isInCheck(!move.isWhite()) == move.getIsCheckmate()) {
+			    return true;
+			}
 		}
 		
 		return false;
@@ -298,8 +300,8 @@ public class Board {
 	/**
 	 * Contains.
 	 *
-	 * @param p1 the p 1
-	 * @param pieces the pieces
+	 * @param p1 
+	 * @param pieces 
 	 * @return true, if successful
 	 */
 	// Helper method for the clear?????Except methods above.

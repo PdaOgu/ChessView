@@ -6,15 +6,34 @@ import java.util.List;
 import chessview.*;
 import chessview.pieces.*;
 
+/**
+ * The Class BoardCanvas.
+ */
 public class BoardCanvas extends Canvas {
+	
+	/** The boards. */
 	private ArrayList<Board> boards;
+	
+	/** The index. */
 	private int index = 0;
+	
+	/** The Constant BLACK. */
 	private static final Color BLACK = new Color(90,48,158);
+	
+	/** The Constant WHITE. */
 	private static final Color WHITE = new Color(210,205,185);
+	
+	/** The font. */
 	private Font font;
 	
+	/** The preferred fonts. */
 	private static String[] preferredFonts = {"Arial","Times New Roman"};
 	
+	/**
+	 * Instantiates a new board canvas.
+	 *
+	 * @param boards the boards
+	 */
 	public BoardCanvas(List<Board> boards) {
 		this.boards = new ArrayList<Board>(boards);
 		setBounds(0, 0, 400, 400);
@@ -33,6 +52,11 @@ public class BoardCanvas extends Canvas {
 		}
 	}
 	
+	/**
+	 * Paint.
+	 *
+	 * @param g the g
+	 */
 	public void paint(Graphics g) {		
 		int width = (getWidth()-4)/9;
 		int height = (getHeight()-4)/9;
@@ -46,6 +70,15 @@ public class BoardCanvas extends Canvas {
 		drawPieces(g,width+2,2,width,height);
 	}
 	
+	/**
+	 * Draw pieces.
+	 *
+	 * @param g the g
+	 * @param startx the startx
+	 * @param starty the starty
+	 * @param width the width
+	 * @param height the height
+	 */
 	private void drawPieces(Graphics g, int startx, int starty, int width, int height) {
 		for(int row=1;row<=8;++row) {
 			int ypos = starty + ((8-row)*height);
@@ -59,6 +92,16 @@ public class BoardCanvas extends Canvas {
 		}
 	}
 	
+	/**
+	 * Draw piece.
+	 *
+	 * @param p the p
+	 * @param g the g
+	 * @param startx the startx
+	 * @param starty the starty
+	 * @param width the width
+	 * @param height the height
+	 */
 	private void drawPiece(Piece p, Graphics g, int startx, int starty, int width, int height) {
 		if(p.isWhite()) {
 			g.setColor(Color.WHITE);
@@ -142,6 +185,15 @@ public class BoardCanvas extends Canvas {
 		} 
 	}
 	
+	/**
+	 * Draw coords.
+	 *
+	 * @param g the g
+	 * @param startx the startx
+	 * @param starty the starty
+	 * @param width the width
+	 * @param height the height
+	 */
 	private void drawCoords(Graphics g, int startx, int starty, int width, int height) {
 		g.setColor(BLACK);		
 				 		
@@ -186,6 +238,15 @@ public class BoardCanvas extends Canvas {
 		g.drawChars(new char[]{'H'},0,1,startx+Hoff+(width*8),starty);		
 	}
 	
+	/**
+	 * Draw background.
+	 *
+	 * @param g 
+	 * @param startx the startx
+	 * @param starty the starty
+	 * @param width the width
+	 * @param height the height
+	 */
 	private void drawBackground(Graphics g, int startx, int starty, int width, int height) {
 		int endx = startx + (8*width);
 		int endy = starty + (8*height);
@@ -204,11 +265,21 @@ public class BoardCanvas extends Canvas {
 		}
 	}	
 	
+	/**
+	 * Fwd.
+	 *
+	 * @param amount 
+	 */
 	public void fwd(int amount) {
 		index = Math.min(boards.size()-1,index + amount);
 		repaint();		
 	}
 	
+	/**
+	 * Bwd.
+	 *
+	 * @param amount 
+	 */
 	public void bwd(int amount) {
 		index = Math.max(0,index - amount);
 		repaint();		

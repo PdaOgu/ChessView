@@ -55,9 +55,7 @@ public class TakeMove extends Move {
 	 */
 	@Override
 	public boolean isValid (Board board) {
-	    Board temp = new Board(board);
-		return this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board)
-		        && (this.checkmateState(this, temp) == this.getIsCheckmate());
+		return this.piece.isValidMove(this.oldPosition, this.newPosition, this.isTaken, board);
 	}
 
 	/**
@@ -67,6 +65,7 @@ public class TakeMove extends Move {
 	 */
 	@Override
 	public void apply (Board board) {
+	    this.incMoveCounter(board);
 		board.move(this.oldPosition, this.newPosition);
 	}
 	

@@ -39,6 +39,7 @@ public class EnPassant extends TakeMove {
 	 * @param board 
 	 */
 	public void apply(Board board) {
+	    this.incMoveCounter(board);
 		board.move(oldPosition, newPosition);
 		int newRow = newPosition.row();
 		int newCol = newPosition.column();

@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class KingTests.
+ */
 public class KingTests extends TestCase {
 	
+	/**
+	 * Test king moves.
+	 */
 	public @Test void testKingMoves() {
 		String[][] tests = { 
 				// Test 1

@@ -2,13 +2,31 @@ package chessview.pieces;
 
 import chessview.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Rook.
+ * implement rook pieces.
+ */
 public class Rook extends Piece {
-	boolean isFirstMove;
-	public Rook (boolean isWhite) {
+
+    /**
+     * Instantiates a new rook.
+     *
+     * @param isWhite the is white
+     */
+    public Rook (boolean isWhite) {
 		super(isWhite);
-		this.isFirstMove = true;
 	}
 	
+	/**
+	 * Checks if is valid move.
+	 *
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 * @param isTaken the is taken
+	 * @param board the board
+	 * @return true, if is valid move
+	 */
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 		
@@ -28,12 +46,15 @@ public class Rook extends Piece {
 		
 		boolean isValid = board.clearColumnExcept(oldPosition, newPosition, p, t)
 						|| board.clearRowExcept(oldPosition, newPosition, p, t);
-		if (isValid)
-			this.isFirstMove = false;
 		
 		return isValid; 
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString () {
 		if(this.isWhite()) {
 			return "R";

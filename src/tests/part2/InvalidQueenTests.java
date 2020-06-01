@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidQueenTests.
+ */
 public class InvalidQueenTests extends TestCase {
 	
+	/**
+	 * Test invalid queen moves.
+	 */
 	public @Test void testInvalidQueenMoves() {
 		String[] tests = { 
 			"Qd1-d4",
@@ -19,6 +25,9 @@ public class InvalidQueenTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid queen takes.
+	 */
 	public @Test void testInvalidQueenTakes() {
 		String[] tests = {
 			"Qd1xQd8",

@@ -2,18 +2,53 @@ package chessview.pieces;
 
 import chessview.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Pawn.
+ * implement pawn piece
+ */
 public class Pawn extends Piece {
-    private boolean canEnPassant;
+    
+    /** The can be en passant. */
+    private boolean canBeEnPassant;
 	
-	public boolean canEnPassant () {
-        return canEnPassant;
+	/**
+	 * Can be en passant.
+	 *
+	 * @return true, if successful
+	 */
+	public boolean canBeEnPassant () {
+        return canBeEnPassant;
+    }
+	
+	/**
+	 * Sets the can be en passant.
+	 *
+	 * @param canBeEnPassant the new can be en passant
+	 */
+	public void setCanBeEnPassant (boolean canBeEnPassant) {
+        this.canBeEnPassant = canBeEnPassant;
     }
 
+    /**
+     * Instantiates a new pawn.
+     *
+     * @param isWhite 
+     */
     public Pawn (boolean isWhite) {
 		super(isWhite);
-		this.canEnPassant = false;		
+		this.canBeEnPassant = false;		
 	}
 	
+	/**
+	 * Checks if is valid move.
+	 *
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 * @param isTaken the is taken
+	 * @param board the board
+	 * @return true, if is valid move
+	 */
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 	    
@@ -33,13 +68,6 @@ public class Pawn extends Piece {
 		if (!this.equals(p))
 			return false;
 		
-		boolean isFirstMove = false;
-		
-		if ((this.isWhite() && oldRow == 2)
-		    || (!this.isWhite() && oldRow == 7))
-		    isFirstMove = true;
-		
-		
 		boolean isValid = false;
 		
 		if (isTaken == null) {				// simple move, not take any piece
@@ -48,10 +76,9 @@ public class Pawn extends Piece {
 					if (oldRow + dir == newRow) {	       // move forward 1 square
 						isValid = true;
 					} else if (oldRow + dir + dir == newRow
-					        && isFirstMove
+					        && p.getMoveCounter() == 0
 					        && board.pieceAt(new Position(oldRow + dir, oldCol)) == null) {	       // move forward 2 squares
 						isValid = true;
-						this.canEnPassant = true;
 					}
 				}
 			}
@@ -64,9 +91,9 @@ public class Pawn extends Piece {
 					if ((isTaken instanceof Pawn)
 							&& isTaken.equals(adjacent)
 							&& this.isWhite() != isTaken.isWhite()) {
-						if (((Pawn) isTaken).canEnPassant()
-								&& (this.isWhite() && oldRow == 5)
-								&& (!this.isWhite() && oldRow == 4)) {
+						if (((Pawn) isTaken).canBeEnPassant()
+								&& ((this.isWhite() && oldRow == 5)
+								|| (!this.isWhite() && oldRow == 4))) {
 							isValid = true;
 						}
 					}
@@ -77,6 +104,11 @@ public class Pawn extends Piece {
 		return isValid;
 	}	
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString () {
 		if(this.isWhite()) {
 			return "P";

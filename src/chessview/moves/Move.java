@@ -124,6 +124,18 @@ public abstract class Move implements ICheckable {
 	 *
 	 * @return the string
 	 */
+	protected void incMoveCounter (Board board) {
+        Piece p = board.pieceAt(oldPosition);
+        p.setMoveCounter(p.getMoveCounter() + 1);
+        if (p instanceof Pawn) {
+            if (Math.abs(this.oldPosition.row() - this.newPosition.row()) == 1) {
+                ((Pawn) p).setCanBeEnPassant(false);
+            } else {
+                ((Pawn) p).setCanBeEnPassant(true);
+            }
+        }
+	}
+	
 	public abstract String toString ();
 	
 	/**

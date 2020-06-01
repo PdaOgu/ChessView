@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidKingTests.
+ */
 public class InvalidKingTests extends TestCase {
 	
+	/**
+	 * Test invalid king moves.
+	 */
 	public @Test void testInvalidKingMoves() {
 		String[] tests = { 
 			"Ke1-e3",
@@ -18,6 +24,9 @@ public class InvalidKingTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid king takes.
+	 */
 	public @Test void testInvalidKingTakes() {
 		String[] tests = {
 			"Ke1xe7",

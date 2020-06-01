@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class CastleTests.
+ */
 public class CastleTests extends TestCase {
 	
+	/**
+	 * Test valid castling.
+	 */
 	public @Test void testValidCastling() {
 		String[][] tests = { 
 				// Test 1
@@ -61,6 +67,9 @@ public class CastleTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test invalid castling.
+	 */
 	public @Test void testInvalidCastling() {
 		String[] tests = {
 			"e2-e4 e7-e6\nNg1-f3 d7-d6\nO-O",
