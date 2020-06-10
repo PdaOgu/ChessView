@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="chessview.Board" project="chessview123" 
     file="/chessview123/src/chessview/Board.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="72" y="69"/>    
+    <position height="-1" width="-1" x="426" y="841"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="chessview.ChessGame" project="chessview123" 
     file="/chessview123/src/chessview/ChessGame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1111" y="13"/>    
+    <position height="-1" width="-1" x="1042" y="35"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="chessview.Main" project="chessview123" 
     file="/chessview123/src/chessview/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="591" y="-15"/>    
+    <position height="-1" width="-1" x="1526" y="67"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="chessview.Position" project="chessview123" 
     file="/chessview123/src/chessview/Position.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="370" y="43"/>    
+    <position height="-1" width="-1" x="1268" y="171"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="chessview.Round" project="chessview123" 
     file="/chessview123/src/chessview/Round.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="887" y="170"/>    
+    <position height="-1" width="-1" x="453" y="14"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="chessview.moves.Castling" project="chessview123" 
     file="/chessview123/src/chessview/moves/Castling.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="328" y="563"/>    
+    <position height="-1" width="-1" x="1283" y="468"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="chessview.moves.EnPassant" project="chessview123" 
     file="/chessview123/src/chessview/moves/EnPassant.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1103" y="245"/>    
+    <position height="-1" width="-1" x="1531" y="439"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <interface id="8" language="java" name="chessview.moves.ICheckable" project="chessview123" 
     file="/chessview123/src/chessview/moves/ICheckable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="834" y="-5"/>    
+    <position height="-1" width="-1" x="557" y="570"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </interface>  
   <class id="9" language="java" name="chessview.moves.Move" project="chessview123" 
     file="/chessview123/src/chessview/moves/Move.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="584" y="347"/>    
+    <position height="-1" width="-1" x="867" y="565"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="chessview.moves.PawnPromotion" project="chessview123" 
     file="/chessview123/src/chessview/moves/PawnPromotion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="958" y="409"/>    
+    <position height="-1" width="-1" x="1109" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="chessview.moves.SimpleMove" project="chessview123" 
     file="/chessview123/src/chessview/moves/SimpleMove.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="156" width="223" x="223" y="272"/>    
+    <position height="156" width="223" x="406" y="304"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="chessview.moves.TakeMove" project="chessview123" 
     file="/chessview123/src/chessview/moves/TakeMove.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1111" y="625"/>    
+    <position height="-1" width="-1" x="1532" y="712"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="chessview.pieces.Bishop" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Bishop.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="122" width="302" x="-57" y="835"/>    
+    <position height="122" width="302" x="1354" y="1222"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="chessview.pieces.King" project="chessview123" 
     file="/chessview123/src/chessview/pieces/King.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="93" y="1036"/>    
+    <position height="-1" width="-1" x="576" y="1295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="chessview.pieces.Knight" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Knight.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="92" y="1176"/>    
+    <position height="-1" width="-1" x="1003" y="1295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="chessview.pieces.Pawn" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Pawn.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1076" y="1139"/>    
+    <position height="-1" width="-1" x="160" y="1278"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="chessview.pieces.Piece" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Piece.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="587" y="972"/>    
+    <position height="-1" width="-1" x="854" y="986"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="chessview.pieces.Queen" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Queen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1078" y="845"/>    
+    <position height="-1" width="-1" x="1512" y="924"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="chessview.pieces.Rook" project="chessview123" 
     file="/chessview123/src/chessview/pieces/Rook.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1079" y="983"/>    
+    <position height="-1" width="-1" x="1511" y="1080"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="chessview.viewer.BoardCanvas" project="chessview123" 
     file="/chessview123/src/chessview/viewer/BoardCanvas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="65" y="400"/>    
+    <position height="-1" width="-1" x="108" y="192"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="chessview.viewer.BoardFrame" project="chessview123" 
     file="/chessview123/src/chessview/viewer/BoardFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="67" y="700"/>    
+    <position height="-1" width="-1" x="69" y="554"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,250 +192,243 @@
   </class>  
   <class id="22" language="java" name="chessview.viewer.RoundCanvas" project="chessview123" 
     file="/chessview123/src/chessview/viewer/RoundCanvas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="583" y="697"/>    
+    <position height="-1" width="-1" x="82" y="968"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="23">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="24" name="rounds">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <generalization id="23">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <realization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <association id="26">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="27" name="rounds">        
+        <position height="0" width="0" x="-434" y="-156"/>      
       </attribute>      
-      <multiplicity id="25" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-434" y="-156"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="26">    
-    <bendpoint x="894" y="826"/>    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="27" name="isTaken">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="28" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <generalization id="29">    
-    <end type="SOURCE" refId="12"/>    
+    <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <association id="32">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="33" name="newPosition">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="30">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="31" name="isTaken">        
+        <position height="0" width="0" x="267" y="14"/>      
       </attribute>      
-      <multiplicity id="34" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="35">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <association id="36">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="37" name="boards">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="39">    
-    <bendpoint x="377" y="230"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="40" name="oldPosition">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
-    <bendpoint x="477" y="821"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="43" name="piece">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="44" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="32" minimum="0" maximum="1">        
+        <position height="0" width="0" x="267" y="14"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="45">    
-    <bendpoint x="193" y="708"/>    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="46" name="pieces">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <generalization id="33">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="34">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="35" name="white">        
+        <position height="0" width="0" x="283" y="218"/>      
       </attribute>      
-      <multiplicity id="47" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="283" y="218"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="48">    
+  <association id="37">    
     <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="49" name="boardCanvas">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="38" name="boardCanvas">        
+        <position height="0" width="0" x="43" y="-208"/>      
       </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="43" y="-208"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="52" name="boards">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="40">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="41" name="oldPosition">        
+        <position height="0" width="0" x="898" y="128"/>      
       </attribute>      
-      <multiplicity id="53" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="898" y="128"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="54">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <generalization id="55">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="56">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <association id="57">    
-    <bendpoint x="705" y="651"/>    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="58" name="promotion">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="43">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="44" name="pieces">        
+        <position height="0" width="0" x="267" y="14"/>      
       </attribute>      
-      <multiplicity id="59" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="267" y="14"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="15"/>    
+  <association id="46">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="47" name="boards">        
+        <position height="0" width="0" x="354" y="772"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="354" y="772"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
+  <association id="50">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="51" name="rounds">        
+        <position height="0" width="0" x="-434" y="-156"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-434" y="-156"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="55">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="56" name="newPosition">        
+        <position height="0" width="0" x="898" y="128"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="898" y="128"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <bendpoint x="755" y="216"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="59" name="black">        
+        <position height="0" width="0" x="283" y="218"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="283" y="218"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="61">    
     <end type="SOURCE" refId="21" navigable="false">      
       <attribute id="62" name="roundCanvas">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="-200" y="502"/>      
       </attribute>      
       <multiplicity id="63" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="-200" y="502"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="64">    
-    <bendpoint x="755" y="216"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="65" name="black">        
-        <position height="0" width="0" x="0" y="0"/>      
+    <bendpoint x="1034" y="843"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="65" name="promotion">        
+        <position height="0" width="0" x="267" y="14"/>      
       </attribute>      
       <multiplicity id="66" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="67">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <association id="68">    
-    <bendpoint x="968" y="702"/>    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="69" name="isTaken">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="70" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="267" y="14"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="71">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="72" name="rounds">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="73" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="74">    
-    <end type="SOURCE" refId="10"/>    
+  <generalization id="67">    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
-  <association id="75">    
-    <bendpoint x="781" y="296"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="76" name="white">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="77" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="78">    
-    <bendpoint x="448" y="464"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="79">    
+  <generalization id="69">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
+  <association id="70">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="71" name="piece">        
+        <position height="0" width="0" x="267" y="14"/>      
+      </attribute>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="267" y="14"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="73">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <association id="74">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="75" name="boards">        
+        <position height="0" width="0" x="354" y="772"/>      
+      </attribute>      
+      <multiplicity id="76" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="354" y="772"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="78" name="isTaken">        
+        <position height="0" width="0" x="267" y="14"/>      
+      </attribute>      
+      <multiplicity id="79" minimum="0" maximum="1">        
+        <position height="0" width="0" x="267" y="14"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
