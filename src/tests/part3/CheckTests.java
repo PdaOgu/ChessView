@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class CheckTests.
+ */
 public class CheckTests extends TestCase {
 	
+	/**
+	 * Test valid checks.
+	 */
 	public @Test void testValidChecks() {
 		String[][] tests = { 
 				// Test 1
@@ -60,6 +66,9 @@ public class CheckTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test invalid checks.
+	 */
 	public @Test void testInvalidChecks() {
 		String[] tests = {
 			"e2-e4+",

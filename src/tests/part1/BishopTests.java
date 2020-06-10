@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class BishopTests.
+ */
 public class BishopTests extends TestCase {
 	
+	/**
+	 * Test bishop moves.
+	 */
 	public @Test void testBishopMoves() {
 		String[][] tests = { 
 				// Test 1
@@ -86,6 +92,9 @@ public class BishopTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test bishop takes.
+	 */
 	public @Test void testBishopTakes() {
 		String[][] tests = {
 				// Test 1

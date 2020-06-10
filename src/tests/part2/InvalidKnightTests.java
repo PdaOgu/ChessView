@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidKnightTests.
+ */
 public class InvalidKnightTests extends TestCase {
 	
+	/**
+	 * Test invalid knight moves.
+	 */
 	public @Test void testInvalidKnightMoves() {
 		String[] tests = { 
 			"Nb1-b3",
@@ -17,6 +23,9 @@ public class InvalidKnightTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid knight takes.
+	 */
 	public @Test void testInvalidKnightTakes() {
 		String[] tests = {
 			"Nb1xd2",

@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class PromotionTests.
+ */
 public class PromotionTests extends TestCase {
 	
+	/**
+	 * Test pawn promotions.
+	 */
 	public @Test void testPawnPromotions() {
 		String[][] tests = { 
 				// Test 1
@@ -60,6 +66,9 @@ public class PromotionTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test invalid pawn promotions.
+	 */
 	public @Test void testInvalidPawnPromotions() {
 		String[] tests = {
 			"a2-a4=N",

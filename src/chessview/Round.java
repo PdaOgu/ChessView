@@ -10,7 +10,11 @@ import chessview.moves.Move;
  * 
  */
 public class Round {
+	
+	/** The white. */
 	private Move white;
+	
+	/** The black. */
 	private Move black;
 	
 	/**
@@ -27,14 +31,29 @@ public class Round {
 		this.black = black;
 	}
 	
+	/**
+	 * White.
+	 *
+	 * @return the move
+	 */
 	public Move white() {
 		return white;
 	}
 	
+	/**
+	 * Black.
+	 *
+	 * @return the move
+	 */
 	public Move black() {
 		return black;
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString() {
 		String r = white.toString();
 		if(black != null) {

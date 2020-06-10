@@ -6,8 +6,17 @@ import static org.junit.Assert.*;
 import java.util.*;
 import chessview.*;
 
+/**
+ * The Class TestHelpers.
+ * check that test is valid or not
+ */
 public class TestHelpers {
 
+	/**
+	 * Check valid tests.
+	 *
+	 * @param tests the tests
+	 */
 	// The following provides a simple helper method for all tests.
 	public static void checkValidTests(String[][] tests) {
 		for(String[] test : tests) {
@@ -36,6 +45,11 @@ public class TestHelpers {
 		}
 	}
 	
+	/**
+	 * Check invalid tests.
+	 *
+	 * @param tests the tests
+	 */
 	// The following provides a simple helper method for all tests.
 	public static void checkInvalidTests(String[] tests) {
 		for(String input : tests) {			

@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class RookTests.
+ */
 public class RookTests extends TestCase {
 	
+	/**
+	 * Test rook moves.
+	 */
 	public @Test void testRookMoves() {
 		String[][] tests = { 
 				// Test 1
@@ -60,6 +66,9 @@ public class RookTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test rook takes.
+	 */
 	public @Test void testRookTakes() {
 		String[][] tests = {
 				// Test 1

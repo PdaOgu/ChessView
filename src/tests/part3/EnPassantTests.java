@@ -6,8 +6,14 @@ import static tests.TestHelpers.*;
 
 // See: http://en.wikipedia.org/wiki/En_passant
 
+/**
+ * The Class EnPassantTests.
+ */
 public class EnPassantTests extends TestCase {
 	
+	/**
+	 * Test en passant.
+	 */
 	public @Test void testEnPassant() {
 		String[][] tests = { 
 				// Test 1
@@ -52,6 +58,9 @@ public class EnPassantTests extends TestCase {
 		checkValidTests(tests);
 	}	
 	
+	/**
+	 * Test invalid en passant.
+	 */
 	public @Test void testInvalidEnPassant() {
 		String[] tests = {
 			"h2-h3 b7-b5\na2-a3 b5-b4\na3-a4 b4xa3ep",

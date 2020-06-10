@@ -2,22 +2,53 @@ package chessview.pieces;
 
 import chessview.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Pawn.
+ * implement pawn piece
+ */
 public class Pawn extends Piece {
+    
+    /** The can be en passant. */
     private boolean canBeEnPassant;
 	
+	/**
+	 * Can be en passant.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean canBeEnPassant () {
         return canBeEnPassant;
     }
 	
+	/**
+	 * Sets the can be en passant.
+	 *
+	 * @param canBeEnPassant the new can be en passant
+	 */
 	public void setCanBeEnPassant (boolean canBeEnPassant) {
         this.canBeEnPassant = canBeEnPassant;
     }
 
+    /**
+     * Instantiates a new pawn.
+     *
+     * @param isWhite 
+     */
     public Pawn (boolean isWhite) {
 		super(isWhite);
 		this.canBeEnPassant = false;		
 	}
 	
+	/**
+	 * Checks if is valid move.
+	 *
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 * @param isTaken the is taken
+	 * @param board the board
+	 * @return true, if is valid move
+	 */
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 	    
@@ -73,6 +104,11 @@ public class Pawn extends Piece {
 		return isValid;
 	}	
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString () {
 		if(this.isWhite()) {
 			return "P";

@@ -7,13 +7,31 @@ import javax.swing.*;
 import javax.swing.border.*;
 import chessview.*;
 
+/**
+ * The Class BoardFrame.
+ */
 public class BoardFrame extends JFrame implements ActionListener, KeyListener {
+	
+	/** The bottom inner panel. */
 	private JPanel bottomInnerPanel;
+	
+	/** The left inner panel. */
 	private JPanel leftInnerPanel;
+	
+	/** The right inner panel. */
 	private JPanel rightInnerPanel;
+	
+	/** The board canvas. */
 	private BoardCanvas boardCanvas;
+	
+	/** The round canvas. */
 	private RoundCanvas roundCanvas;	
 	
+	/**
+	 * Instantiates a new board frame.
+	 *
+	 * @param game the game
+	 */
 	public BoardFrame(ChessGame game) {
 		super("Chess View");
 
@@ -71,6 +89,11 @@ public class BoardFrame extends JFrame implements ActionListener, KeyListener {
 		setVisible(true);
 	}
 	
+	/**
+	 * Action performed.
+	 *
+	 * @param e the e
+	 */
 	public void actionPerformed(ActionEvent e) {
 		// When a toolbar button or menu item is
 		// clicked on this function will be called
@@ -98,6 +121,11 @@ public class BoardFrame extends JFrame implements ActionListener, KeyListener {
 	
 	// METHODS REQUIRED FOR KEY LISTENER
 	
+	/**
+	 * Key pressed.
+	 *
+	 * @param e the e
+	 */
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_KP_RIGHT) {
@@ -115,9 +143,19 @@ public class BoardFrame extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 	
+	/**
+	 * Key released.
+	 *
+	 * @param e 
+	 */
 	public void keyReleased(KeyEvent e) {		
 	}
 	
+	/**
+	 * Key typed.
+	 *
+	 * @param e 
+	 */
 	public void keyTyped(KeyEvent e) {
 		
 	}

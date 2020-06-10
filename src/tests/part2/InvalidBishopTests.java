@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidBishopTests.
+ */
 public class InvalidBishopTests extends TestCase {
 	
+	/**
+	 * Test invalid bishop moves.
+	 */
 	public @Test void testInvalidBishopMoves() {
 		String[] tests = { 
 				"Bc1-c3",
@@ -19,6 +25,9 @@ public class InvalidBishopTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid bishop takes.
+	 */
 	public @Test void testInvalidBishopTakes() {
 		String[] tests = {
 			"Bc1xc7",

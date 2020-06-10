@@ -2,11 +2,30 @@ package chessview.pieces;
 
 import chessview.*;
 
+/**
+ * The Class King.
+ * implement king piece
+ */
 public class King extends Piece {
+	
+	/**
+	 * Instantiates a new king.
+	 *
+	 * @param isWhite the is white
+	 */
 	public King (boolean isWhite) {
 		super(isWhite);
 	}	
 	
+	/**
+	 * Checks if is valid move.
+	 *
+	 * @param oldPosition the old position
+	 * @param newPosition the new position
+	 * @param isTaken the is taken
+	 * @param board the board
+	 * @return true, if it is valid move
+	 */
 	public boolean isValidMove (Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
 	    
@@ -66,6 +85,11 @@ public class King extends Piece {
 		return isValid;
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString () {
 		if(this.isWhite()) {
 			return "K";

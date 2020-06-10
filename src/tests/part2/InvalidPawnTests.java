@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class InvalidPawnTests.
+ */
 public class InvalidPawnTests extends TestCase {
 	
+	/**
+	 * Test invalid pawn moves.
+	 */
 	public @Test void testInvalidPawnMoves() {
 		String[] tests = { 
 			"e2-e3 c7-c6\ne3-e5",
@@ -18,6 +24,9 @@ public class InvalidPawnTests extends TestCase {
 		checkInvalidTests(tests);
 	}
 	
+	/**
+	 * Test invalid pawn takes.
+	 */
 	public @Test void testInvalidPawnTakes() {
 		String[] tests = {
 			"e2-e4 e7-e5\ne4xe5",

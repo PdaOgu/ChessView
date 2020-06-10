@@ -4,8 +4,14 @@ import org.junit.Test;
 import junit.framework.TestCase;
 import static tests.TestHelpers.*;
 
+/**
+ * The Class KnightTests.
+ */
 public class KnightTests extends TestCase {
 	
+	/**
+	 * Test knight moves.
+	 */
 	public @Test void testKnightMoves() {
 		String[][] tests = { 
 				// Test 1
@@ -72,6 +78,9 @@ public class KnightTests extends TestCase {
 		checkValidTests(tests);
 	}
 	
+	/**
+	 * Test knight takes.
+	 */
 	public @Test void testKnightTakes() {
 		String[][] tests = {
 				// Test 1
