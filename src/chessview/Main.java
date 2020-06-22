@@ -22,7 +22,7 @@ public class Main {
 			if (args.length > 0) {
 				path = args[0];
 			} else {
-				path = "/home/ductiendo/Workspaces/ICT/3/OOP_Lab/sol/ChessView/test-case.txt";
+				path = "/home/hung/source/repos/ChessView/game-003.txt";
 			}
 			ChessGame game = new ChessGame(new FileReader(path));			
 			new BoardFrame(game);
