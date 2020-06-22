@@ -94,23 +94,11 @@ public abstract class Move implements ICheckable {
 	public void setIsCheckmate (boolean isCheckmate) {
 		this.isCheckmate = isCheckmate;
 	}
-	
-	/**
-	 * Checkmate state.
-	 *
-	 * @param move the move
-	 * @param board the board
-	 * @return true, if successful
-	 */
-	public boolean checkmateState (Move move, Board board) {
-	    move.apply(board);
-	    return board.isInCheck(!this.isWhite());
-	}
-	
+
 	/**
 	 * To string checkmate.
 	 *
-	 * @return the string
+	 *Ra8xNg8 @return the string
 	 */
 	public String toStringCheckmate () {
 		if (this.isCheckmate)
